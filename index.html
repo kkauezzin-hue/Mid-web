@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>MD WEB | Soluções Digitais</title>
+
+  <meta name="description" content="MD WEB — Sites profissionais, landing pages, lojas virtuais e soluções digitais para empresas que querem crescer.">
+  <meta name="theme-color" content="#050507">
+
+  <style>
+    :root {
+      --bg: #050507;
+      --bg2: #09090d;
+      --card: rgba(255,255,255,.055);
+      --border: rgba(255,255,255,.10);
+      --text: #f7f7f8;
+      --muted: #a6a6b0;
+      --green: #19e68c;
+      --green2: #0bbf72;
+      --blue: #4f7cff;
+      --purple: #8b5cf6;
+      --shadow: 0 30px 100px rgba(0,0,0,.45);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(25,230,140,.10), transparent 25%),
+        radial-gradient(circle at 10% 30%, rgba(79,124,255,.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(5,5,7,.72);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      color: #cfcfd4;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border-radius: 50px;
+      background: var(--green);
+      color: #001b10 !important;
+      font-weight: 800;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(25,230,140,.25);
+      background: rgba(25,230,140,.07);
+      color: var(--green);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -5px;
+      margin-bottom: 26px;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(90deg, #fff, var(--green));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 23px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .25s;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #001b10;
+      box-shadow: 0 10px 35px rgba(25,230,140,.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 45px rgba(25,230,140,.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* 3D VISUAL */
+
+    .visual {
+      position: relative;
+      height: 520px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .orb {
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #fff, #b9ffe0 5%, #19e68c 25%, #087b4d 50%, #031b12 72%);
+      box-shadow:
+        0 0 50px rgba(25,230,140,.22),
+        0 0 140px rgba(25,230,140,.10);
+      animation: float 6s ease-in-out infinite;
+      position: relative;
+    }
+
+    .orb:before,
+    .orb:after {
+      content: "";
+      position: absolute;
+      inset: -25px;
+      border: 1px solid rgba(25,230,140,.2);
+      border-radius: 50%;
+      transform: rotate(25deg) scaleY(.35);
+    }
+
+    .orb:after {
+      transform: rotate(-25deg) scaleY(.35);
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(12,12,17,.72);
+      backdrop-filter: blur(15px);
+      border-radius: 16px;
+      box
